@@ -1,0 +1,12 @@
+body {
+    padding: 0px;
+    margin: 0px;
+    text-align: center;
+}
+canvas {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-image: url(image/background/background.png);
+}

@@ -1,11 +1,3 @@
-// Background: 288x526 px
-// Pipe: 52x320 px | ratio = 52/320 = 13/80
-// Bird: 34x24 px
-// Base: 288x14 px
-// Game over: 192x42 px
-// Button : 82x28 px
-// Get ready : 184 x 267 px
-
 // Image of game
 var yellowMidImg = new Image()
 yellowMidImg.src = "image/Bird/Yellow bird/bird-midflap.png"

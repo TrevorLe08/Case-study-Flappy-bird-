@@ -13,7 +13,7 @@ function updateImg() {  // Upload animation
 updateImg() 
 
 function draw() { // draw Image
-    bird1.draw()  
+    bird.draw()  
     base.draw()
 }
 
@@ -26,13 +26,13 @@ function update() {
         var pipe = arrPipe[i]
         arrPipe[i].x += speedX
         ctx.drawImage(arrPipe[i].img,arrPipe[i].x,arrPipe[i].y,52,320) 
-        if (!pipe.passed && bird1.x > pipe.x + pipe.width) {
+        if (!pipe.passed && bird.x > pipe.x + pipe.width) {
             scoreAud.play()
             score += 0.5;
             pipe.passed = true;
             best = Math.max(score,best);
         } 
-        if (checkCollision(bird1,pipe)) {
+        if (checkCollision(bird,pipe)) {
             endGame = true
             hitAud.play()
         } 
@@ -44,7 +44,7 @@ function update() {
     ctx.font="35px Teko";
     ctx.fillText(score,144, 45);   
     ctx.textAlign = "center"; 
-    bird1.update()
+    bird.update()
 }
 
 // Animation pipes
@@ -65,13 +65,13 @@ if (!endGame) {
     document.addEventListener("keydown",function(e) { // Bird jump
         if (e.code == "Space" || e.code == "ArrowUp") {
                 speedY = -6   
-                bird1.img = yellowDownImg
+                bird.img = yellowDownImg
                 flapAud.play()
         }
     });   
     document.addEventListener("keyup",function(e) { 
         if (e.code == "Space" || e.code == "ArrowUp") {
-            bird1.img = yellowUpImg 
+            bird.img = yellowUpImg 
         }
     }); 
 }
@@ -109,11 +109,11 @@ function stateGameOver() {
         let clickX = event.clientX - rect.left;
         let clickY = event.clientY - rect.top;
         if(clickX >= 103 && clickX <= 185 && clickY >= 350 && clickY <= 378){ // 185 = 103 + 82 | 378 = 350 + 28  
-            bird1.y = birdY;
+            bird.y = birdY;
             arrPipe = []; 
             score = 0;
             endGame = false;
-            bird1.reset() 
+            bird.reset() 
         } 
     })
 }        

@@ -18,8 +18,7 @@ var ctx = canvas.getContext("2d");
 var speedY = 0              // Bird jump speed
 var birdX = boardWidth/8
 var birdY = boardHeight/2
-var bird1                   // Yellow Bird
-var bird2                   // Green Bird
+var bird                 
 class Bird {
     x
     y
@@ -65,8 +64,8 @@ class Bird {
         this.y = boardHeight/2
     }
 }
-bird1 = new Bird(birdX,birdY,34,24,yellowMidImg)
-bird1.img = yellowMidImg
+bird = new Bird(birdX,birdY,34,24,yellowMidImg)
+bird.img = yellowMidImg
 
 // Pipes
 var pipe1              // Top pipe
